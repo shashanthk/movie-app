@@ -6,7 +6,7 @@ package com.shashanth.retrofit.service;
 
 public class Constants {
 
-    public static final String API_KEY = "9bd3f0a86ca106f097135a7fb7589f41";
+    public static final String API_KEY = "";
     public static final String BASE_URL = "http://api.themoviedb.org/3/";
 
     // image url
