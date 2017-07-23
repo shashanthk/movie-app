@@ -1,4 +1,4 @@
-package com.shashanth.retrofit.service;
+package com.shashanth.retrofit.network;
 
 import com.shashanth.retrofit.genre.GenreResponse;
 import com.shashanth.retrofit.movie.MovieResponse;
@@ -6,6 +6,8 @@ import com.shashanth.retrofit.movie.MovieResponse;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+
+import static com.shashanth.retrofit.network.Constants.API_KEY;
 
 /**
  * Created by shashanth
@@ -18,7 +20,7 @@ public final class APICall {
      * @param listener = HTTP response callback listener
      */
     public static void getGenreList(String type, final HttpResponseListener<GenreResponse> listener) {
-        Call<GenreResponse> call = ApiClient.getClient().getGenreLists(type, Constants.API_KEY);
+        Call<GenreResponse> call = ApiClient.getService().getGenreLists(type, API_KEY);
         call.enqueue(new Callback<GenreResponse>() {
             @Override
             public void onResponse(Call<GenreResponse> call, Response<GenreResponse> response) {
@@ -32,8 +34,8 @@ public final class APICall {
         });
     }
 
-    public static void getMovieList(int genreId, final HttpResponseListener<MovieResponse> listener) {
-        Call<MovieResponse> call = ApiClient.getClient().getMovieList(genreId, Constants.API_KEY);
+    public static void getMovieList(final HttpResponseListener<MovieResponse> listener) {
+        Call<MovieResponse> call = ApiClient.getService().getMovieList(API_KEY);
         call.enqueue(new Callback<MovieResponse>() {
             @Override
             public void onResponse(Call<MovieResponse> call, Response<MovieResponse> response) {

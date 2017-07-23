@@ -1,4 +1,4 @@
-package com.shashanth.retrofit.service;
+package com.shashanth.retrofit.network;
 
 import com.shashanth.retrofit.genre.GenreResponse;
 import com.shashanth.retrofit.movie.MovieResponse;
@@ -22,10 +22,9 @@ public interface APIService {
     Call<GenreResponse> getGenreLists(@Path("type") String type, @Query("api_key") String apiKey);
 
     /**
-     * @param genreId =
      * @param apiKey = imdb api key
      * @return = list of movie list obtained from api
      */
-    @GET("genre/{genre_id}/movies")
-    Call<MovieResponse> getMovieList(@Path("genre_id") int genreId, @Query("api_key") String apiKey);
+    @GET("movie/top_rated")
+    Call<MovieResponse> getMovieList(@Query("api_key") String apiKey);
 }

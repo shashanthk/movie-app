@@ -1,6 +1,7 @@
 package com.shashanth.retrofit.movie;
 
 import com.google.gson.annotations.SerializedName;
+import com.shashanth.retrofit.util.Util;
 
 import java.util.List;
 
@@ -68,7 +69,7 @@ public class Movie {
     }
 
     public String getReleaseDate() {
-        return releaseDate;
+        return Util.dbToDisplay(releaseDate);
     }
 
     public String getPosterPath() {
@@ -93,5 +94,9 @@ public class Movie {
 
     public int getVoteCount() {
         return voteCount;
+    }
+
+    public String getAvgString() {
+        return String.valueOf(voteAverage);
     }
 }

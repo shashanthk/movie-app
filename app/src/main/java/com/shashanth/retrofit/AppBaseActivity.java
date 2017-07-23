@@ -5,9 +5,10 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
+import com.shashanth.retrofit.service.ConnectivityReceiverListener;
 import com.shashanth.retrofit.ui.UIHandlers;
 
-public class AppBaseActivity extends AppCompatActivity {
+public class AppBaseActivity extends AppCompatActivity implements ConnectivityReceiverListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,5 +29,10 @@ public class AppBaseActivity extends AppCompatActivity {
 
     protected static void logi(String tag, String msg) {
         Log.i(tag, "Log: " + msg);
+    }
+
+    @Override
+    public void onConnectivityChanged(boolean isConnected) {
+        
     }
 }

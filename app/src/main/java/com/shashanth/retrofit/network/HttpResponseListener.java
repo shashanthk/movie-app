@@ -1,4 +1,4 @@
-package com.shashanth.retrofit.service;
+package com.shashanth.retrofit.network;
 
 import retrofit2.Response;
 
